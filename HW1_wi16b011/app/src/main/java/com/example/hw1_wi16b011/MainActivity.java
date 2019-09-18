@@ -1,6 +1,8 @@
 package com.example.hw1_wi16b011;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText hw1EditText1;
     private EditText hw1EditText2;
     private Button hw1Button;
+    private Button hw1ButtonNavigate;
     private SeekBar simpleSeekBar;
 
     @Override
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         hw1Button = (Button) findViewById(R.id.idofButton);
+        hw1ButtonNavigate = (Button) findViewById(R.id.idofButtonNavigate);
         hw1TextView = (TextView ) findViewById(R.id.idofTextView);
         hw1EditText1 = (EditText ) findViewById(R.id.idofEditText1);
         hw1EditText2 = (EditText ) findViewById(R.id.idofEditText2);
@@ -33,6 +37,22 @@ public class MainActivity extends AppCompatActivity {
         hw1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            int input1 = TextUtils.isDigitsOnly(hw1EditText1.getText())
+                    ? Integer.parseInt(hw1EditText1.getText().toString()) : 0;
+            int input2 = TextUtils.isDigitsOnly(hw1EditText2.getText())
+                    ? Integer.parseInt(hw1EditText2.getText().toString()) : 0;
+
+            int sum = input1 + input2;
+            String result = Integer.toString(sum);
+            hw1TextView.setText(result);
+            simpleSeekBar.setProgress(sum);
+           }
+        });
+
+        hw1ButtonNavigate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 int input1 = TextUtils.isDigitsOnly(hw1EditText1.getText())
                         ? Integer.parseInt(hw1EditText1.getText().toString()) : 0;
                 int input2 = TextUtils.isDigitsOnly(hw1EditText2.getText())
@@ -40,9 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
                 int sum = input1 + input2;
                 String result = Integer.toString(sum);
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, result);
                 hw1TextView.setText(result);
                 simpleSeekBar.setProgress(sum);
-           }
+                startActivity(intent);
+            }
         });
 
         simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

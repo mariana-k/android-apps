@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MOC Homework 1</string>
     <string name="button_submit">Submit</string>
+    <string name="button_navigate">Navigate</string>
     <string name="placeholder">0</string>
     <string name="my_name">Mariana Kyrkosh</string>
 </resources>
