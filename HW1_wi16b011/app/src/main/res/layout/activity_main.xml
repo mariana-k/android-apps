@@ -3,13 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/idofEditText"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
         android:layout_row="0"
         android:layout_column="0"
+        android:text="@string/my_name"
+        android:padding="16dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/idofEditText1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_row="1"
+        android:layout_column="0"
         android:inputType="text"
+        android:padding="16dp"
+        android:hint="@string/placeholder"/>
+
+    <EditText
+        android:id="@+id/idofEditText2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:inputType="text"
+        android:hint="@string/placeholder"
         android:padding="16dp"/>
 
     <Button
@@ -17,20 +37,28 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/button_submit"
-        android:layout_row="1"
+        android:layout_row="3"
         android:layout_column="0"
         android:padding="16dp"/>
+
+    <SeekBar
+        android:id="@+id/simpleSeekBar"
+        android:layout_width="fill_parent"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_row="2"
+        android:layout_row="5"
         android:layout_column="0">
         <TextView
             android:id="@+id/idofTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            android:text="@string/placeholder"
             android:textSize="20sp" />
     </ScrollView>
 </GridLayout>
