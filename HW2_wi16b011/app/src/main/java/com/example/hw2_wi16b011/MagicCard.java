@@ -51,6 +51,6 @@ public class MagicCard implements Comparable<MagicCard> {
 
     @Override
     public int compareTo(@NonNull MagicCard second) {
-        return name.compareTo(second.name);
+        return name.compareToIgnoreCase(second.name);
     }
 }

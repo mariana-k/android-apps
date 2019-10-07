@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -110,8 +112,10 @@ public class MainActivity extends AppCompatActivity {
                             colorsArray.add(colors.getString(j));
                             magicCard.addColor(colorsArray.get(j));
                         }
+
                         magicCards.add(magicCard);
                     }
+                    Collections.sort(magicCards);
                     for (int i = 0; i < magicCards.size(); i++) {
                         content.append(magicCards.get(i).getName());
                         content.append(" - ");
