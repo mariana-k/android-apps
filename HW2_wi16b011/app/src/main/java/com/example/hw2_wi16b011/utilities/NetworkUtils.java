@@ -16,6 +16,7 @@
 package com.example.hw2_wi16b011.utilities;
 
 import android.net.Uri;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,6 +59,7 @@ public class NetworkUtils {
             url = new URL(builtUri.toString());
         } catch (MalformedURLException e) {
             e.printStackTrace();
+            Log.e("Exception found ", e.getMessage());
         }
 
         return url;
