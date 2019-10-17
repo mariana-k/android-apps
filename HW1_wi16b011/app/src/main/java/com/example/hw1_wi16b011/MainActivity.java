@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView hw1TextView2;
     private TextView hw1TextView;
     private EditText hw1EditText1;
     private EditText hw1EditText2;
@@ -28,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
         hw1Button = (Button) findViewById(R.id.idofButton);
         hw1ButtonNavigate = (Button) findViewById(R.id.idofButtonNavigate);
         hw1TextView = (TextView ) findViewById(R.id.idofTextView);
+        hw1TextView2 = (TextView ) findViewById(R.id.idofTextView2);
         hw1EditText1 = (EditText ) findViewById(R.id.idofEditText1);
         hw1EditText2 = (EditText ) findViewById(R.id.idofEditText2);
         simpleSeekBar = (SeekBar) findViewById(R.id.simpleSeekBar);
 
-        simpleSeekBar.setProgress(Integer.parseInt(hw1TextView.getText().toString()));
+        simpleSeekBar.setProgress(Integer.parseInt(hw1TextView2.getText().toString()));
 
         hw1Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             int sum = input1 + input2;
             String result = Integer.toString(sum);
             hw1TextView.setText(result);
-            simpleSeekBar.setProgress(sum);
+
            }
         });
 
@@ -62,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 String result = Integer.toString(sum);
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 intent.putExtra(Intent.EXTRA_TEXT, result);
-                hw1TextView.setText(result);
-                simpleSeekBar.setProgress(sum);
                 startActivity(intent);
             }
         });
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 Toast.makeText(MainActivity.this, "Seek bar progress is :" + progressChangedValue,
                         Toast.LENGTH_SHORT).show();
-                hw1TextView.setText(Integer.toString(progressChangedValue));
+                hw1TextView2.setText(Integer.toString(progressChangedValue));
             }
         });
     }

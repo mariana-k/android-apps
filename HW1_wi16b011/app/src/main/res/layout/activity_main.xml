@@ -19,7 +19,7 @@
         android:layout_row="1"
         android:layout_column="0"
         android:inputType="text"
-        android:padding="16dp"
+        android:layout_margin="16dp"
         android:hint="@string/placeholder"/>
 
     <EditText
@@ -30,39 +30,53 @@
         android:layout_column="0"
         android:inputType="text"
         android:hint="@string/placeholder"
-        android:padding="16dp"/>
+        android:layout_margin="16dp"/>
 
     <Button
         android:id="@+id/idofButton"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="@string/button_submit"
         android:layout_row="3"
         android:layout_column="0"
-        android:padding="16dp"/>
+        android:layout_margin="16dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="4"
+        android:layout_column="0">
+        <TextView
+            android:id="@+id/idofTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/placeholder"
+            android:textSize="20sp" />
+    </ScrollView>
     <Button
         android:id="@+id/idofButtonNavigate"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="@string/button_navigate"
-        android:layout_row="3"
+        android:layout_row="5"
         android:layout_column="0"
-        android:padding="16dp"/>
+        android:layout_margin="16dp"/>
 
     <SeekBar
         android:id="@+id/simpleSeekBar"
-        android:layout_width="fill_parent"
-        android:layout_row="4"
+        android:layout_width="match_parent"
+        android:layout_row="6"
         android:layout_column="0"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_row="5"
+        android:layout_row="7"
         android:layout_column="0">
         <TextView
-            android:id="@+id/idofTextView"
+            android:id="@+id/idofTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
